@@ -23,71 +23,6 @@
 
 ## OSI Model
 
-- What is the OSI model?
-
-    - The Open Systems Interconnection (OSI) model is a conceptual model created by the International Organization for Standardization which enables diverse communication systems to communicate using standard protocols. In plain English, the OSI provides a standard for different computer systems to be able to communicate with each other.
-
-    - The OSI model can be seen as a universal language for computer networking. It’s based on the concept of splitting up a communication system into seven abstract layers, each one stacked upon the last.    
-    -      
-
-![OSI Model](https://github.com/Tikam02/DevOps_Cheatsheet/blob/master/img/osi-model-7-layers.svg)
-
--  7. The Application Layer
-
-   - This is the only layer that directly interacts with data from the user. Software applications like web browsers and email clients rely on the application layer to initiate communications. But it should be made clear that client software applications are not part of the application layer; rather the application layer is responsible for the protocols and data manipulation that the software relies on to present meaningful data to the user. Application layer protocols include HTTP as well as SMTP (Simple Mail Transfer Protocol is one of the protocols that enables email communications).
-
-![OSI Model](https://github.com/Tikam02/DevOps_Cheatsheet/blob/master/img/7-application-layer.svg)
-
-- 6. The Presentation Layer
-
-    - This layer is primarily responsible for preparing data so that it can be used by the application layer; in other words, layer 6 makes the data presentable for applications to consume. The presentation layer is responsible for translation, encryption, and compression of data.
-
-    - Two communicating devices communicating may be using different encoding methods, so layer 6 is responsible for translating incoming data into a syntax that the application layer of the receiving device can understand.
-
-    - If the devices are communicating over an encrypted connection, layer 6 is responsible for adding the encryption on the sender’s end as well as decoding the encryption on the receiver's end so that it can present the application layer with unencrypted, readable data.
-
-    - Finally the presentation layer is also responsible for compressing data it receives from the application layer before delivering it to layer 5. This helps improve the speed and efficiency of communication by minimizing the amount of data that will be transferred.
-
-![Presentation layer](https://github.com/Tikam02/DevOps_Cheatsheet/blob/master/img/6-presentation-layer.svg)
-
-- 5. The Session Layer
-
-    - This is the layer responsible for opening and closing communication between the two devices. The time between when the communication is opened and closed is known as the session. The session layer ensures that the session stays open long enough to transfer all the data being exchanged, and then promptly closes the session in order to avoid wasting resources.
-
-    - The session layer also synchronizes data transfer with checkpoints. For example, if a 100 megabyte file is being transferred, the session layer could set a checkpoint every 5 megabytes. In the case of a disconnect or a crash after 52 megabytes have been transferred, the session could be resumed from the last checkpoint, meaning only 50 more megabytes of data need to be transferred. Without the checkpoints, the entire transfer would have to begin again from scratch.
-
-![session layer](https://github.com/Tikam02/DevOps_Cheatsheet/blob/master/img/5-session-layer.svg)
-
-
-- 4. The Transport Layer
-
-    - Layer 4 is responsible for end-to-end communication between the two devices. This includes taking data from the session layer and breaking it up into chunks called segments before sending it to layer 3. The transport layer on the receiving device is responsible for reassembling the segments into data the session layer can consume.
-
-    - The transport layer is also responsible for flow control and error control. Flow control determines an optimal speed of transmission to ensure that a sender with a fast connection doesn’t overwhelm a receiver with a slow connection. The transport layer performs error control on the receiving end by ensuring that the data received is complete, and requesting a retransmission if it isn’t.
-
-![transport layer](https://github.com/Tikam02/DevOps_Cheatsheet/blob/master/img/4-transport-layer.svg)
-
-
-- 3. The Network Layer
-
-    - The network layer is responsible for facilitating data transfer between two different networks. If the two devices communicating are on the same network, then the network layer is unnecessary. The network layer breaks up segments from the transport layer into smaller units, called packets, on the sender’s device, and reassembling these packets on the receiving device. The network layer also finds the best physical path for the data to reach its destination; this is known as routing.
-
-![network layer](https://github.com/Tikam02/DevOps_Cheatsheet/blob/master/img/3-network-layer.svg)
-
-
-- 2. The Data Link Layer
-
-    - The data link layer is very similar to the network layer, except the data link layer facilitates data transfer between two devices on the SAME network. The data link layer takes packets from the network layer and breaks them into smaller pieces called frames. Like the network layer, the data link layer is also responsible for flow control and error control in intra-network communication (The transport layer only does flow control and error control for inter-network communications).
-
-![Data link layer](https://github.com/Tikam02/DevOps_Cheatsheet/blob/master/img/2-data-link-layer.svg)
-
-
-- 1. The Physical Layer
-
-    - This layer includes the physical equipment involved in the data transfer, such as the cables and switches. This is also the layer where the data gets converted into a bit stream, which is a string of 1s and 0s. The physical layer of both devices must also agree on a signal convention so that the 1s can be distinguished from the 0s on both devices.
-
-![Physical layer](https://github.com/Tikam02/DevOps_Cheatsheet/blob/master/img/1-physical-layer.svg)
-
 
 ***************************
 ## Four DoD layers
@@ -288,7 +223,7 @@
    
    - Authoritative nameserver - This final nameserver can be thought of as a dictionary on a rack of books, in which a specific name can be translated into its definition. The authoritative nameserver is the last stop in the nameserver query. If the authoritative name server has access to the requested record, it will return the IP address for the requested hostname back to the DNS Recursor (the librarian) that made the initial request.
 
-- dns records
+- DNS Records
 
     - A record:
         - The A record, which is also called a host record contains the ipv4-address of a computer.When a DNS client queries a DNS server for an A record, then the DNS server will resolve the hostname in the query to an ip address. An AAAA record is similar but contains an ipv6 address instead of ipv4.
@@ -343,6 +278,33 @@ Internally (within a network), it can be very useful for caching proxy(Squid). F
 **********************************************
 
 ## Routing Bridging and NAT
+### NAT
+ The motivation behind NAT or Network Address Translation comes from the continuously increasing number of network applications and users along with the limited pool of public IPv4 addresses.
+
+
+NAT enables hosts on an internal network to access an external network. NAT not only solves the problem of IPv4 address shortage but it also solves security loopholes since NAT prevents devices on the external network from directly communicating with hosts on the internal network that use private addresses.
+
+#### Private IP Addresses
+While public IP addresses are used for direct communication on the internet and are handled and distributed by dedicated organizations, private IP addresses are not used for direct communication on the internet and can be used by anyone randomly on an internal network. So a private IP address can be assigned to multiple machines as long as they don't belong to the same internal network.
+
+- Reserved private IP addresses 
+
+    - Class A:
+        - 10.0.0.0 - 10.255.255.255
+    - Class B:
+        -  172.16.0.0 – 172.31.255.255
+    - Class C:
+        -  192.168.0.0 – 192.168.255.255
+
+NAT is usually implemented on network egress devices such as routers or firewalls. An internal network can be an entreprise or a home. So, when you are using your computer at home and you want to access the internet to chat with some friends, a packet is sent to your home router where there is a NAT configured. For a traffic coming from an internal network (home) and going to an external network (internet), the NAT will translate the source IP address (private) which is in this case your computer's, into a specific public IP address so you can communicate with the public or external network. And vice versa, when a traffic is coming from an external network and going to an internal network, the NAT will translate the destination IP address (public) into a specific private IP address.
+
+#### Static NAT vs Dynamic NAT
+When a private IP address is linked to a fixed IP address, this is called static NAT because it is one-to-one mode. Whereas in dynamic NAT, a private IP address is mapped to a group of public IP addresses. Static NAT could result in wasting IP addresses because the public IP address is always reserved for a specific host whether they are online or offline. However, dynamic NAT temporarily assigns a random IP address in the pool of addresses to the host. When the latter is no longer online, dynamic NAT frees that formerly claimed IP address and it is then available for other users.
+
+#### NAPT and Easy IP
+Despite that, dynamic NAT is far from perfect because it does not handle port numbers translation. This is where NAPT or Network Address and Port Translation comes to the rescue because it enables a public IP address to map multiple private IP addresses through ports. In this mode, both IP addresses and transport-layer ports are translated so that different private addresses with different source port numbers are mapped to the same public address with different source port numbers.
+
+Easy IP also translates both IP addresses and transport-layer port numbers. However, Easy IP applies to scenarios where public IP addresses are not fixed, such as scenarios where public IP addresses are dynamically obtained by egress devices on private networks through DHCP (Dynamic Host Configuration Protocol) for example.
 
 *********************************************
 

@@ -20,7 +20,7 @@
 - Q1) Can you tell us the fundamental differences between DevOps & Agile?
   - A: Although DevOps shares some similarities with the Agile methodology, which is one of the most popular SDLC methodologies, both are fundamentally different approaches to software development. Following are the various fundamental differences between the two:
 
-    - Agile Approach – The agile approach is only meant for development in Agile while the agile approach is meant for both development and operations in DevOps.
+    - Agile Approach – The agile approach is only meant for development in Agile while the Devops approach is meant for both development and operations in DevOps.
 
     - Practices and Processes – While agile involves practices such as Agile Scrum and Agile Kanban, DevOps involves processes such as CD (Continuous Delivery), CI (Continuous Integration), and CT (Continuous Testing).
 
@@ -390,7 +390,7 @@
 
 - Q3) How do you start/stop services?
   - (deprecated) service start/stop service_name
-  - systemctl strat/stop service_name
+  - systemctl start/stop service_name
 
 - Q4) How do you display the shell’s environment variables?
   - env
@@ -488,250 +488,6 @@
     - What’s an ELB ?
     - What’s S3 ? What are the features supported on S3 ?
 
-- Q38) What is your experience with Linux? When you can set up an application on multiple operating systems, on which one would you prefer to set it up and why?
-
-- Q39) Explain what each of the following commands does and give an example on how to use it:
-
-  - ls
-  - rm
-  - rmdir (can you achieve the same result by using rm?)
-  - grep
-  - wc
-  - curl
-  - touch
-  - man
-  - nslookup or dig
-  - df
-
-- Q40) Running the command df you get "command not found". What could be wrong and how to fix it?
-
-- Q41) How to make sure a service will start on a OS of your choice?
-
-- Q42) How do you schedule tasks periodically?
-  - with cron
-
-- Q43) Have you scheduled tasks in the past? What kind of tasks?
-
-- Permissions
-- Q44) How to change the permissions of a file?
-
-- Q45) What does the following permissions mean?:
-
-  - 777 
-  - 644
-  - 750
-
-- Q46) Explain what is setgid, setuid and sticky bit?You try to delete a file but it fails. Name at least three different reason as to why it could happen.
-  
-- Q47) What is systemd?On a system which uses systemd, how would display the logs?
-
-- Debugging
-
-- Q48) What are you using for troubleshooting and debugging network issues?
-
-- Q49) What are you using for troubleshooting and debugging disk & file system issues?
-
-- Q50) What are you using for troubleshooting and debugging process issues?
-
-- Q51) What are you using for debugging CPU related issues?
-
-- Q52) You get a call saying "my system is slow" - how would you deal with it?
-
-- Q53) How to debug binaries?
-
-- Q54) What is a Linux kernel module and how do you load a new module?
-
-- Q55) What is KVM?
-
-- Q56) What is the difference between SSH and SSL?
-
-- Q57) What is SSH port forwarding?
-
-- Q58)Explain redirection
-
-- Q59) What are wildcards? Can you give an example of how to use them?
-
-- Q60) What do we grep for in each of the following commands?:
-
-  - grep '[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}' some_file
-  - grep -E "error|failure" some_file
-  - grep '[0-9]$' some_file
-
-- Q61) Tell me everything you know about Linux boot process?
-
-- Q63) What is an exit code? What exit codes are you familiar with?
-
-
-- Q64) What is the difference between a soft link and hard link?
-
-- Q65) What happens when you delete the original file in case of soft link and hard link?
-
-- Q66) What is a swap partition? What is it used for?
-
-- Q67) You are trying to create a new file but you get "File system is full". You check with df for free space and you see you used only 20% of the space. What could be the problem?
-
-- Q68) What do you know about LVM?
-
-- Q69) Explain the following in regards to LVM:
-
-  - PV
-  - VG
-  - LV
-
-
-- Q70) What is NFS? What is it used for?
-
-- Q71) What RAID is used for? Can you explain the differences between RAID 0, 1, 5 and 10?
-
-- Q72) What is lazy umount?
-
-- Q73) Fix the following commands:
-
-  - ```sed "s/1/2/g' /tmp/myFile```
-  - ```find . -iname *.yaml -exec sed -i "s/1/2/g" {} ;```
-
-- Q74) Explain what is stored in each of the following paths and if there is anything unique about it:
-
-- Q75) What is chroot?
-
-- Processes
-
-- Q76) How to run a process in the background and why to do that in the first place?
-
-- Q77) How can you find how much memory a specific process consumes?
-
-- Q78) What signal is used when you run 'kill '?
-
-- Q79) What signals are you familiar with?
-
-- Q80) What is a trap?
-
-- Q81) What happens when you press ctrl + c?
-
-- Q82) What are daemons?
-
-- Q83) What are the possible states of a process in Linux?
-
-- Q84) What is a zombie process? How do you get rid of it?
-
-- Q85) What is the init process?
-
-- Q86) How to change the priority of a process? Why would you want to do that?
-
-- Q87) Can you explain how network process/connection is established and how it's terminated?>
-
-- Q88) What are system calls? What system calls are you familiar with?
-
-- Q89) What strace does?
-
-- Q90) Find all the files which end with '.yml' and replace the number 1 in 2 in each file
-
-- Q91) How to check how much free memory a system has? How to check memory consumption by each process?
-
-- Q92) How would you split a 50 lines file into 2 files of 25 lines each?
-
-- Q92) What is a file descriptor? What file descriptors are you familiar with?
-
-- Q93) What's an inode?
-
-- Q94) How to list active connections?
-
-- Q95) What is NTP? What is it used for?
-
-- Q96) Explain Kernel OOM
-
-- Q97) What is SELiunx?
-
-- Q98) What is Kerberos?
-
-- Q99) What is nftables?
-
-- Q100) What firewalld daemon is responsible for?
-  
-- Network
-
-- Q101) What is a network namespace? What is it used for?
-
-- Q102) How can you turn your Linux server into a router?
-
-- Q103) What is a virtual IP? In what situation would you use it?
-
-- Q104) Which port is used in each of the following protocols?:
-
-  - SSH
-  - HTTP
-  - DNS
-  - HTTPS
-
-
-- Q105) What is the routing table? How do you view it?
-
-- Q106) What are packet sniffers? Have you used one in the past? If yes, which packet sniffers have you used and for what purpose?
-
-- DNS
-
-- Q107) What is DNS? Why do we need it?
-
-- Q108) What the file /etc/resolv.conf is used for? What does it include?
-
-- Q109) What is a "A record"?
-
-- Q110) What is a PTR record?
-
-- Q111) What is a MX record?
-
-- Q112) Is DNS using TCP or UDP?
-
-- Packaging
-
-- Q113) Do you have experience with packaging? Can you explain how it works?
-  - RPM: explain the spec format(what it should and can include)
-
-- Q114) How do you list the content of a package without actually installing it?
-
-- Applications and Services
-- Q115) What is a load balancer?
-  
-- Q116) What load balancer algorithms are you familiar with?
-
-- Q117) What is a proxy?
-
-- Q118) What is a reverse proxy?
-
-- Q119)What can you find in /etc/services
-
-- Q120) You run ssh 127.0.0.1 but it fails with "connection refused". What could be the problem?
-
-- Q121) What happens when you execute ls?. Provide a detailed answer
-
-- Q122) Can you describe how processes are being created?
-
-
-- Q123) What is the difference between a process and a thread?
-
-- Q124) When you run ip a you see there is a device called 'lo'. What is it and why do we need it?
-
-- Q125) What traceroute command does? How it works?
-
-- Q126) What is network bonding? What types are you familiar with?
-
-- Q127) How to link two separate network namespaces so you can ping an interface on one namespace from the second one?
-
-- Q128) What are cgroups? In what scenario would you use them?
-
-- Q129) How to create a file of a certain size?
-
-- Q130) What are the differences between the following system calls?: exec(), fork(), vfork() and clone()?
-
-- Q131) Explain Process Descriptor and Task Structure?
-
-- Q132) What are the differences between threads and processes?
-
-- Q133) Explain Kernel Threads
-
-- Q134What happens when socket system call is used?
-
-- Q135) You executed a script and while still running, it got accidentally removed. Is it possible to restore the script while it's still running?
 
 ******************
 
@@ -762,94 +518,6 @@
 - Q10) What is IPv6 ? Why should we care?
 
 
-
-- Q11) What is Ethernet?
-
-- Q12) What is a MAC address? What is it used for?
-
-- Q13) When this MAC address is used?: ff:ff:ff:ff:ff:ff
-
-- Q14) What is an IP address?
-
-- Q15) Explain subnet mask and given an example
-
-- Q16) What is a private IP address? What do we need it for?
-
-- Q17) Explain the OSI model. What layers there are? What each layer is responsible for?
-
-- Q18) For each of the following determine to which OSI layer it belongs:
-
-  - Error correction
-  - Packets routing
-  - Cables and electrical signals
-  - MAC address
-  - IP address
-  - Sessions between applications
-  - 3 way handshake
-
-- Q19) What delivery schemes are you familiar with?
-
-- Q20)What is CSMA/CD? Is it used in modern ethernet networks?
-
-- Q21) Describe the following network devices and the difference between them:
-
-  - router
-  - switch
-  - hub
-
-- Q22) What is NAT?
-
-- Q23) What is a proxy? How it works? What do we need it for?
-
-- Q24) What is the difference between TCP and UDP?
-
-- Q25) Explain "default gateway"
-
-- Q26) How TCP works? What is the 3 way handshake?
-
-- Q27) What is ARP? How it works?
-
-- Q28) What is TTL?
-
-- Q29) What is DHCP? How it works?
-
-- Q30) What is SSL tunneling? How it works?
-
-- Q31) What is a socket? Where can you see the list of sockets in your system?
-
-- Q32) What is IPv6? Why should we consider using it if we have IPv4?
-
-- Q33) What is VLAN?
-
-- Q34) What is MTU?
-
-- Q35) True or False?. Ping is using UDP because it doesn't care about reliable connection
-
-- Q36) What is SDN?
-
-- Q37) What is ICMP? What is it used for?
-
-- Q38) What is NAT? How it works?
-
-- Q39) Explain Spanning Tree Protocol (STP)
-
-- Q40) What is link aggregation? Why is it used?
-
-- Q41) What is Asymmetric Routing? How do deal with it?
-
-- Q42) What overlay (tunnel) protocols are you familiar with?
-
-- Q43) What is GRE? How it works?
-
-- Q44) What is VXLAN? How it works?
-
-- Q45) What is SNAT?
-
-- Q46) Explain OSPF
-
-- Q47) Explain Spine & Leaf
-
-- Q48) Using Hamming code, what would be the code word for the following data word 100111010001101?
 
 
 *******************
@@ -904,13 +572,125 @@
 
 ##  kubernetes
 
+- Q1) What is Kubernetes?
+    -A: Kubernetes is an open-source container management tool that holds the responsibilities of container deployment, scaling & descaling of containers & load balancing. Being Google’s brainchild, it offers excellent community and works brilliantly with all the cloud providers. So, we can say that Kubernetes is not a containerization platform, but it is a multi-container management solution. 
 
+- Q2) How is Kubernetes related to Docker?
+  -A: It’s a known fact that Docker provides the lifecycle management of containers and a Docker image builds the runtime containers. But, since these individual containers have to communicate, Kubernetes is used. So, Docker builds the containers and these containers communicate with each other via Kubernetes. So, containers running on multiple hosts can be manually linked and orchestrated using Kubernetes.
+  
+-Q3) What is Container Orchestration?
+  -A: Consider a scenario where you have 5-6 microservices for an application. Now, these microservices are put in individual containers, but won’t be able to communicate without container orchestration. So, as orchestration means the amalgamation of all instruments playing together in harmony in music, similarly container orchestration means all the services in individual containers working together to fulfill the needs of a single server.\
+
+-Q4) What do you know about clusters in Kubernetes?
+  -A: The fundamental behind Kubernetes is that we can enforce the desired state management, by which I mean that we can feed the cluster services of a specific configuration, and it will be up to the cluster services to go out and run that configuration in the infrastructure.
+  So, as you can see in the above diagram, the deployment file will have all the configurations required to be fed into the cluster services. Now, the deployment file will be fed to the API and then it will be up to the cluster services to figure out how to schedule these pods in the environment and make sure that the right number of pods are running.
+
+So, the API which sits in front of services, the worker nodes & the Kubelet process that the nodes run, all together make up the Kubernetes Cluster.
+
+-Q5) How to do maintenance activity on the K8 node?
+   -A:Whenever there are security patches available the Kubernetes administrator has to perform the maintenance task to apply the security patch to the running container in order to prevent it from vulnerability, which is often an unavoidable part of the administration. The following two commands are useful to safely drain the K8s node.
+
+kubectl cordon
+kubectl drain –ignore-daemon set
+The first command moves the node to maintenance mode or makes the node unavailable, followed by kubectl drain which will finally discard the pod from the node. After the drain command is a success you can perform maintenance.
+
+Note: If you wish to perform maintenance on a single pod following two commands can be issued in order:
+
+kubectl get nodes: to list all the nodes
+kubectl drain <node name>: drain a particular node
+  
+-Q6) What is the role of Load Balance in Kubernetes?
+  -A: Load balancing is a way to distribute the incoming traffic into multiple backend servers, which is useful to ensure the application available to the users.
+  In Kubernetes, as shown in the above figure all the incoming traffic lands to a single IP address on the load balancer which is a way to expose your service to outside the internet which routes the incoming traffic to a particular pod (via service) using an algorithm known as round-robin. Even if any pod goes down load balances are notified so that the traffic is not routed to that particular unavailable node. Thus load balancers in Kubernetes are responsible for distributing a set of tasks (incoming traffic) to the pods
+  
+-Q7) How to monitor the Kubernetes cluster?
+  -A: Prometheus is used for Kubernetes monitoring. The Prometheus ecosystem consists of multiple components.
+
+Mainly Prometheus server which scrapes and stores time-series data.
+Client libraries for instrumenting application code.
+Push gateway for supporting short-lived jobs.
+Special-purpose exporters for services like StatsD, HAProxy, Graphite, etc.
+An alert manager to handle alerts on various support tools
+
+-Q8) Can you explain the differences between Docker Swarm and Kubernetes?
+  -A: Below are the main difference between Kubernetes and Docker:
+
+The installation procedure of the K8s is very complicated but if it is once installed then the cluster is robust. On the other hand, the Docker swarm installation process is very simple but the cluster is not at all robust.
+Kubernetes can process the auto-scaling but the Docker swarm cannot process the auto-scaling of the pods based on incoming load.
+Kubernetes is a full-fledged Framework. Since it maintains the cluster states more consistently so autoscaling is not as fast as Docker Swarm.
+  
+-Q9) How can containers within a pod communicate with each other?
+  -A: Containers within a pod share networking space and can reach other on localhost. For instance, if you have two containers within a pod, a MySQL container running on port 3306, and a PHP container running on port 80, the PHP container could access the MySQL one through localhost:3306.
+  
+-Q10) Explain what is a Master Node and what component does it consist of?
+  -A: The master node is the most vital component responsible for Kubernetes architecture
+      It is the central controlling unit of Kubernetes and manages workload and communications across the clusters
+      The master node has various components, each having its process. They are:
+      -ETCD
+      -Controller Manager
+      -Scheduler
+      -API Server
+      
+ETCD (Cluster store):
+   -This component stores the configuration details and essential values
+   -It communicates with all other components to receive the commands and work in order to perform an action
+   -It also manages network rules and posts forwarding activity
+  
+Controller Manager
+-It is responsible for most of the controllers and performs a task
+-It is a daemon which runs in a continuous loop and is responsible for collecting and sending information to API server
+-The key controllers handle nodes, endpoints, etc.
+
+Scheduler:
+ -It is one of the key components of the master node associated with the distribution of workload
+ -The scheduler is responsible for workload utilization and allocating pod to a new node
+ -The scheduler should have an idea of the total resources available as well as resources allocated to existing workloads on each node
+    
 
 **********************
 
 
 ## Architecture:
 
+-1. Question: Explain the components of Kubernetes architecture and their roles.
+Solution:
+Kubernetes architecture consists of several key components:
+
+Master Node: Manages the cluster and its components.
+API Server: Exposes the Kubernetes API.
+Controller Manager: Ensures the desired state of the cluster.
+Scheduler: Assigns nodes to newly created pods.
+etcd: Consistent and highly-available key-value store used as Kubernetes' backing store.
+Node (Minion) Nodes: Where containers are launched.
+Kubelet: Ensures that containers are running in a Pod.
+Kube Proxy: Maintains network rules for Pod communication.
+Container Runtime: Software responsible for running containers.
+
+-2. Question: What is a Kubernetes Pod and how does it work in a cluster?
+Solution:
+A Pod is the smallest deployable unit in Kubernetes, representing a single instance of a running process in a cluster. Pods can contain multiple containers that share the same network namespace, allowing them to communicate with each other using localhost. Pods are scheduled to run on nodes and can be horizontally scaled by creating multiple replicas managed by Controllers like Deployments.
+
+-3. Question: How does Kubernetes ensure high availability and fault tolerance?
+Solution:
+Kubernetes achieves high availability through:
+
+Replication: Replicating applications across multiple nodes.
+Self-healing: Automatically replaces failed containers or reschedules Pods.
+Load Balancing: Distributes network traffic across multiple Pods.
+Additionally, Kubernetes ensures fault tolerance through features like node monitoring, automatic scaling, and rolling updates, which allow applications to be updated without downtime.
+
+-4. Question: Explain the concept of Kubernetes Services and their types.
+Solution:
+Kubernetes Services provide stable endpoints for Pods. There are several types of Services:
+
+ClusterIP: Exposes the Service on a cluster-internal IP.
+NodePort: Exposes the Service on each Node's IP at a static port.
+LoadBalancer: Exposes the Service externally using a cloud provider's load balancer.
+ExternalName: Maps the Service to the contents of the externalName field (e.g., a DNS name).
+
+-5. Question: What are Kubernetes Deployments, and how do they manage application updates?
+Solution:
+Deployments in Kubernetes describe an application’s life cycle, enabling declarative updates for Pods and ReplicaSets. They provide a way to describe an application’s desired state. When a Deployment’s Pod template (e.g., container image version) is updated, it triggers a rolling update, ensuring zero-downtime updates. Old Pods are replaced by new ones gradually, minimizing disruptions.
 
 ******************
 
